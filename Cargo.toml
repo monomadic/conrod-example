@@ -1,0 +1,10 @@
+[package]
+name = "conrod_example"
+version = "0.1.0"
+authors = ["Rob Saunders <rob@robsaunders.io>"]
+
+[dependencies]
+log = "0.3"
+simplelog = "0.4.2"
+libc = "*"
+conrod = { version = "0.52.0", features = ["piston", "glium", "winit"] }
