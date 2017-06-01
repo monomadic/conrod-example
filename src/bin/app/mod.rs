@@ -47,11 +47,19 @@ impl App {
     }
 
     pub fn draw(&mut self) {
-        println!("draw()");
+        // println!("draw()");
         let mut target = self.display.draw();
         target.clear_color(1.0, 0.3, 0.6, 1.0);
         // self.renderer.draw(&self.display, &mut target, &self.image_map).unwrap();
         target.finish().unwrap();
+
+        // Collect all pending events.
+        let mut events = Vec::new();
+        events.extend(self.display.poll_events());
+
+        for event in events {
+            println!("-- event {:?}", event);
+        }
     }
 }
 
